@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Valentina</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="login-overlay">
+        <div class="login-box">
+            <h2>Acceso Privado</h2>
+            <p>Introduce la contraseña</p>
+            <input type="password" id="password-input" placeholder="DDMMAAAA" autocomplete="off">
+            <button id="login-btn">Entrar</button>
+            <p id="error-msg" class="hidden">Contraseña incorrecta</p>
+        </div>
+    </div>
+
+    <div id="protected-content" class="hidden-protected">
+        <div class="main-content">
+            <header>
+                <p class="tagline">Donde la distancia se rinde ante nosotros</p>
+                <h1>Valentina</h1>
+                <div class="line"></div>
+            </header>
+
+            <section class="counter-box">
+                <p class="one-line">Cada momento desde el 13 de julio de 2025</p>
+                <div class="timer">
+                    <div class="time-unit"><span id="days">0</span><p>Días</p></div>
+                    <div class="time-unit"><span id="hours">0</span><p>Horas</p></div>
+                    <div class="time-unit"><span id="minutes">0</span><p>Mins</p></div>
+                    <div class="time-unit"><span id="seconds">00</span><p>Segs</p></div>
+                </div>
+            </section>
+
+            <section class="message">
+                <div class="card" id="main-card">
+                    <p class="quote">"La distancia es solo una prueba de qué tan lejos puede viajar el cariño."</p>
+                    <div class="hug-zone">
+                        <button id="btn-hug">Haz click aquí</button>
+                        <div id="hug-animation">
+                            <img src="Image/Val.jpg" alt="Valentina">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="letters-section">
+                <div class="reveal-card">
+                    <h3>Nuestra promesa</h3>
+                    <p>Que cada día estemos un paso más cerca. El tiempo es solo el camino hacia nuestro reencuentro.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
