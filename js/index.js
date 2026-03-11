@@ -68,25 +68,20 @@ document.addEventListener('DOMContentLoaded', () => {
             "Simplemente gracias por haber estado a mi lado, enojona 🩷"
         ];
 
-        let frasesDisponibles = [...frasesOriginales]; // Copia de la lista
+        let frasesDisponibles = [...frasesOriginales];
 
         const quoteElement = document.getElementById('random-quote');
         const quoteBtn = document.getElementById('new-quote-btn');
 
         quoteBtn.addEventListener('click', () => {
-            // Si nos quedamos sin frases, recargamos la lista
             if (frasesDisponibles.length === 0) {
                 frasesDisponibles = [...frasesOriginales];
             }
 
-            // Elegimos un índice al azar de las disponibles
             const randomIndex = Math.floor(Math.random() * frasesDisponibles.length);
             const nuevaFrase = frasesDisponibles[randomIndex];
-
-            // Quitamos la frase elegida para que no salga la próxima vez
             frasesDisponibles.splice(randomIndex, 1);
 
-            // Animación de cambio
             quoteElement.style.opacity = '0';
             setTimeout(() => { 
                 quoteElement.innerText = nuevaFrase; 
@@ -94,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 300);
         });
 
-        // --- LÓGICA DE CHAT AUTOMÁTICO ---
+        // --- LÓGICA DE CHAT AUTOMÁTICO (ADAPTADO SAMSUNG/CHROME) ---
         const showChatBtn = document.getElementById('show-chat-btn');
         const chatContainer = document.getElementById('chat-container');
         const chatForm = document.getElementById('chat-form');
@@ -112,20 +107,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     chatHistory.appendChild(bubble);
                 }
                 chatHistory.scrollTop = chatHistory.scrollHeight;
-            } catch (e) { console.log("Buscando..."); }
+            } catch (e) { console.log("Buscando mensajes..."); }
         }
 
         showChatBtn.addEventListener('click', () => {
             if (chatContainer.classList.contains('hidden')) {
+                // ACCIÓN AL ABRIR
                 chatContainer.classList.remove('hidden');
                 showChatBtn.innerText = "Cerrar chat";
                 cargarMensajes();
+                // Limpiar cualquier intervalo fantasma antes de iniciar
+                if(intervaloChat) clearInterval(intervaloChat);
                 intervaloChat = setInterval(cargarMensajes, 3000);
             } else {
+                // ACCIÓN AL CERRAR (LIMPIEZA)
                 chatContainer.classList.add('hidden');
                 showChatBtn.innerText = "Escríbeme si me necesitas";
                 clearInterval(intervaloChat);
-                chatHistory.innerHTML = ""; // Limpia el chat al cerrar
+                // Limpieza profunda compatible con todos los navegadores
+                chatHistory.innerHTML = ""; 
             }
         });
 
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 msgInput.value = "";
                 cargarMensajes();
-            } catch (e) { alert("Error al enviar"); }
+            } catch (e) { alert("Error al enviar mensaje"); }
         });
     }
 
