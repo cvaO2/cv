@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "Eres mi lugar favorito",
             "No hay distancia que pueda con lo que siento por ti",
             "Eres mucho más valiente y fuerte de lo que crees",
-            "Simplemente gracias por haber estado a mi lado, enojona 🩷"
+            "Simplemente gracias por estar conmigo 🩷"
         ];
 
         let frasesDisponibles = [...frasesOriginales];
