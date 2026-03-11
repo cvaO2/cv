@@ -42,7 +42,7 @@
                     <p class="quote">"La distancia es solo una prueba de qué tan lejos puede viajar el cariño."</p>
                     <div class="hug-zone">
                         <button id="btn-hug">Haz click aquí</button>
-                        <div id="hug-animation">
+                        <div id="hug-animation" class="hidden-photo">
                             <img src="https://i.ibb.co/bjNZjgt0/IMG-20251129-050646-765.jpg" alt="Valentina">
                         </div>
                     </div>
@@ -53,6 +53,31 @@
                 <div class="reveal-card">
                     <h3>Simplemente nosotros</h3>
                     <p>Contigo todo es más fácil, hasta el silencio se siente bien.<br>No necesito buscar nada, porque contigo lo tengo todo.<br>Eres mi lugar favorito, mi hogar y mi suerte.<br>No hay mucho más que decir, solo que me encanta quererte.</p>
+                </div>
+            </section>
+
+            <section class="reveal-card" style="margin-top: 30px; margin-bottom: 50px;">
+                <p id="random-quote" style="min-height: 60px; display: flex; align-items: center; justify-content: center; font-style: italic; margin-bottom: 20px;">
+                    Eres una persona maravillosa, nunca lo olvides.
+                </p>
+                
+                <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+                    <button id="new-quote-btn" style="font-size: 0.8rem; width: fit-content;">Un recordatorio para ti</button>
+                    <button id="show-chat-btn" style="font-size: 0.8rem; width: fit-content; border-style: dashed;">Escríbeme si me necesitas</button>
+                </div>
+
+                <div id="chat-container" class="hidden">
+                    <div id="chat-history" style="margin-top: 25px; max-height: 300px; overflow-y: auto; padding: 10px; border: 1px solid #eee; border-radius: 10px; background: #fafafa;">
+                        <p style="font-size: 0.7rem; color: #999;">Cargando mensajes...</p>
+                    </div>
+
+                    <form id="chat-form" style="margin-top: 15px;">
+                        <div class="chat-bubble user-bubble">
+                            <textarea id="user-msg" placeholder="Escribe aquí..." required></textarea>
+                        </div>
+                        <button type="submit" style="margin-top: 15px; font-size: 0.8rem; background: var(--dorado-mate); color: white;">Enviar mensaje</button>
+                    </form>
+                    <p id="form-status" style="font-size: 0.8rem; margin-top: 10px; color: var(--dorado-mate);"></p>
                 </div>
             </section>
         </div>
